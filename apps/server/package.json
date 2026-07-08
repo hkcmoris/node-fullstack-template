@@ -1,0 +1,17 @@
+{
+    "name": "@replace-me/server",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "main": "./dist/index.js",
+    "scripts": {
+        "dev": "tsx watch src/index.ts",
+        "build": "tsc -p tsconfig.build.json",
+        "start": "node dist/index.js",
+        "test": "node --import tsx --test \"test/**/*.test.ts\"",
+        "typecheck": "tsc --noEmit -p tsconfig.json"
+    },
+    "dependencies": {
+        "@replace-me/shared": "0.1.0"
+    }
+}
