@@ -55,11 +55,12 @@ cp .env.example .env
 ## Project structure
 
 ```txt
-src/       Application source code
-test/      Tests
-scripts/   Project automation scripts
-docs/      Project notes and architecture decisions
-.github/   GitHub Actions and dependency automation
+apps/client/      Vite + React frontend
+apps/server/      Node.js backend/service
+packages/shared/  Shared types/utilities
+scripts/          Project automation scripts
+docs/             Project notes and architecture decisions
+.github/          GitHub Actions and dependency automation
 ```
 
 ## Notes

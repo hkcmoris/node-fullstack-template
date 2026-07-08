@@ -34,6 +34,7 @@ Do not claim the project passes checks unless the command has actually been run 
 ## Code style
 
 * Use TypeScript.
+* Use React + Tailwind for frontend.
 * Prefer explicit types at public boundaries.
 * Keep runtime code simple and boring.
 * Avoid unnecessary dependencies.
@@ -43,8 +44,10 @@ Do not claim the project passes checks unless the command has actually been run 
 
 ## File and folder conventions
 
-* Source code lives in `src/`.
-* Tests live in `test/` or next to the file being tested as `*.test.ts`.
+* Vite + React frontend source code lives in `apps/client/src/`.
+* Node.js backend/service source code lives in `apps/server/src/`.
+* Shared types/utilities source code lives in `packages/shared/src/`.
+* Tests live in `apps/server/test/`, `packages/shared/test/` or next to the file being tested as `*.test.ts`.
 * Project scripts live in `scripts/`.
 * Architecture notes live in `docs/adr/`.
 

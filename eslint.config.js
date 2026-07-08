@@ -46,9 +46,20 @@ export default tseslint.config(
                 ...globals.browser,
             },
         },
+        rules: {
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-unused-vars': [
+                'error',
+                {
+                    argsIgnorePattern: '^_',
+                    varsIgnorePattern: '^_',
+                    caughtErrorsIgnorePattern: '^_',
+                },
+            ],
+        },
     },
     {
-        files: ['**/*.{ts,tsx}'],
+        files: ['apps/server/**/*.{ts,tsx}', 'packages/shared/**/*.{ts,tsx}'],
         languageOptions: {
             ecmaVersion: 2022,
             globals: {
