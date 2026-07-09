@@ -18,7 +18,7 @@
         "build": "npm run build -w packages/shared && npm run build -w apps/server && npm run build -w apps/client",
         "start": "npm run start -w apps/server",
         "test": "npm test --workspaces --if-present",
-        "typecheck": "npm run typecheck --workspaces --if-present",
+        "typecheck": "npm run build -w packages/shared && npm run typecheck --workspaces --if-present",
         "lint": "eslint .",
         "format": "prettier . --write",
         "format:check": "prettier . --check",
