@@ -4,6 +4,7 @@ import { pinoHttp } from 'pino-http';
 
 import { logger } from './logger.js';
 import { errorHandler } from './middleware/errorHandler.js';
+import { createApiRouter } from './routes/apiRouter.js';
 
 export function createApp(): Express {
     const app = express();
@@ -16,11 +17,7 @@ export function createApp(): Express {
 
     app.use(express.json());
 
-    app.get('/api/health', (_req, res) => {
-        res.json({
-            ok: true,
-        });
-    });
+    app.use('/api', createApiRouter());
 
     app.use(errorHandler);
 

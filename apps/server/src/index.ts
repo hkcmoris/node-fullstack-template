@@ -9,7 +9,7 @@ const port = Number(process.env.PORT ?? 3000);
 const app = createApp();
 
 const server = app.listen(port, () => {
-    logger.info({ port }, `Server listening`);
+    logger.info({ port }, 'Server listening');
 });
 
 let isShuttingDown = false;
