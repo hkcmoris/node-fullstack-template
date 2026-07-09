@@ -3,6 +3,7 @@ import express from 'express';
 import { pinoHttp } from 'pino-http';
 
 import { logger } from './logger.js';
+import { errorHandler } from './middleware/errorHandler.js';
 
 export function createApp(): Express {
     const app = express();
@@ -20,6 +21,8 @@ export function createApp(): Express {
             ok: true,
         });
     });
+
+    app.use(errorHandler);
 
     return app;
 }
