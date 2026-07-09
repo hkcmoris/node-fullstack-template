@@ -12,6 +12,11 @@
         "typecheck": "tsc --noEmit -p tsconfig.json"
     },
     "dependencies": {
-        "@replace-me/shared": "0.1.0"
+        "@replace-me/shared": "0.1.0",
+        "dotenv": "17.4.2",
+        "express": "5.2.1"
+    },
+    "devDependencies": {
+        "@types/express": "5.0.6"
     }
 }
