@@ -1,7 +1,17 @@
+import type { Express } from 'express';
 import express from 'express';
+import { pinoHttp } from 'pino-http';
 
-export function createApp() {
+import { logger } from './logger.js';
+
+export function createApp(): Express {
     const app = express();
+
+    app.use(
+        pinoHttp({
+            logger,
+        }),
+    );
 
     app.use(express.json());
 
