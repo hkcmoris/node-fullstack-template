@@ -1,7 +1,7 @@
-import 'dotenv/config';
-
 import pino from 'pino';
 
+import { getOptionalEnv } from './config/env.js';
+
 export const logger = pino({
-    level: process.env.LOG_LEVEL ?? 'info',
+    level: getOptionalEnv('LOG_LEVEL', 'info'),
 });
