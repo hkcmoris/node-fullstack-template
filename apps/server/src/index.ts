@@ -1,11 +1,10 @@
-import 'dotenv/config';
-
 import type { Server } from 'node:http';
 
 import { createApp } from './app.js';
+import { getOptionalEnv } from './config/env.js';
 import { logger } from './logger.js';
 
-const port = Number(process.env.PORT ?? 3000);
+const port = Number(getOptionalEnv('PORT', '3000'));
 const app = createApp();
 
 const server = app.listen(port, () => {
