@@ -1,13 +1,14 @@
 import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default defineConfig(
     {
         ignores: ['**/dist/**', 'coverage/**', 'node_modules/**'],
     },
     js.configs.recommended,
-    ...tseslint.configs.recommendedTypeChecked,
+    tseslint.configs.recommendedTypeChecked,
     {
         languageOptions: {
             parserOptions: {
@@ -36,6 +37,28 @@ export default tseslint.config(
         files: ['**/*.mjs'],
         languageOptions: {
             sourceType: 'module',
+        },
+    },
+    {
+        files: ['**/*.{ts,tsx}'],
+        languageOptions: {
+            ecmaVersion: 2020,
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+            },
+        },
+        rules: {
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-deprecated': 'error',
+            '@typescript-eslint/no-unused-vars': [
+                'error',
+                {
+                    argsIgnorePattern: '^_',
+                    varsIgnorePattern: '^_',
+                    caughtErrorsIgnorePattern: '^_',
+                },
+            ],
         },
     },
     {
