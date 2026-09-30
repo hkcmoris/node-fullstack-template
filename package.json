@@ -42,7 +42,7 @@
         "tailwint": "1.1.16",
         "tsx": "4.23.15",
         "typescript": "6.0.3",
-        "typescript-eslint": "8.70.0"
+        "typescript-eslint": "8.70.1"
     },
     "allowScripts": {
         "esbuild": true
