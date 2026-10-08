@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "@replace-me/shared": "0.1.0",
-        "dotenv": "18.0.4",
+        "dotenv": "18.0.5",
         "express": "5.2.1",
         "pino": "10.4.0",
         "pino-http": "11.0.0"
